@@ -1,79 +1,39 @@
 <template>
-  <div id="app">
-    <mu-paper :z-depth="1" class="menu-list-wrap">
-      <mu-appbar color="teal">
-        <mu-button icon slot="left">
-          <mu-icon value="menu"></mu-icon>
-        </mu-button>
-        Menu
-      </mu-appbar>
-      <mu-list>
-        <mu-list-item button :ripple="false">
-          <mu-list-item-action>
-            <mu-icon value="inbox"></mu-icon>
-          </mu-list-item-action>
-          <mu-list-item-title>Inbox</mu-list-item-title>
-        </mu-list-item>
-        <mu-list-item button :ripple="false">
-          <mu-list-item-action>
-            <mu-icon value="grade"></mu-icon>
-          </mu-list-item-action>
-          <mu-list-item-title>Stared</mu-list-item-title>
-        </mu-list-item>
-        <mu-list-item button :ripple="false">
-          <mu-list-item-action>
-            <mu-icon value="send"></mu-icon>
-          </mu-list-item-action>
-          <mu-list-item-title>Sent mail</mu-list-item-title>
-        </mu-list-item>
-        <mu-list-item button :ripple="false">
-          <mu-list-item-action>
-            <mu-icon value="drafts"></mu-icon>
-          </mu-list-item-action>
-          <mu-list-item-title>Drafts</mu-list-item-title>
-        </mu-list-item>
-      </mu-list>
-      <mu-divider></mu-divider>
-      <mu-list>
-        <mu-list-item button :ripple="false">
-          <mu-list-item-title>All mail</mu-list-item-title>
-          <mu-list-item-action>
-            <mu-icon value="info"></mu-icon>
-          </mu-list-item-action>
-        </mu-list-item>
-        <mu-list-item button :ripple="false">
-          <mu-list-item-title>Trash</mu-list-item-title>
-          <mu-list-item-action>
-            <mu-icon value="info"></mu-icon>
-          </mu-list-item-action>
-        </mu-list-item>
-        <mu-list-item button :ripple="false">
-          <mu-list-item-title>Spam</mu-list-item-title>
-          <mu-list-item-action>
-            <mu-icon value="info"></mu-icon>
-          </mu-list-item-action>
-        </mu-list-item>
-        <mu-list-item button :ripple="false">
-          <mu-list-item-title>Follow up</mu-list-item-title>
-          <mu-list-item-action>
-            <mu-icon value="info"></mu-icon>
-          </mu-list-item-action>
-        </mu-list-item>
-      </mu-list>
-    </mu-paper>
-  </div>
+  <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
+    <el-menu-item index="1">处理中心</el-menu-item>
+    <el-submenu index="2">
+      <template slot="title">我的工作台</template>
+      <el-menu-item index="2-1">选项1</el-menu-item>
+      <el-menu-item index="2-2">选项2</el-menu-item>
+      <el-menu-item index="2-3">选项3</el-menu-item>
+      <el-submenu index="2-4">
+        <template slot="title">选项4</template>
+        <el-menu-item index="2-4-1">选项1</el-menu-item>
+        <el-menu-item index="2-4-2">选项2</el-menu-item>
+        <el-menu-item index="2-4-3">选项3</el-menu-item>
+      </el-submenu>
+    </el-submenu>
+    <el-menu-item index="3" disabled>消息中心</el-menu-item>
+    <el-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>
+  </el-menu>
 </template>
-
 <script>
 export default {
   name: 'Menu',
   components: {
+  },
+  data () {
+    return {
+      activeIndex: '1'
+    }
+  },
+  methods: {
+    handleSelect (key, keyPath) {
+      console.log(key, keyPath)
+    }
   }
 }
 </script>
 <style scoped>
-  .menu-list-wrap {
-    width: 100%;
-    max-width: 360px;
-  }
+
 </style>
