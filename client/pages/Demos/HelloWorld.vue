@@ -1,5 +1,5 @@
 <template>
-  <main-layout>
+  <main-layout :selected-id="activeIndex">
     <div class="hello">
       <h1>{{ msg }}</h1>
       <h2>Essential Links</h2>
@@ -84,7 +84,6 @@
     </div>
   </main-layout>
 </template>
-
 <script>
 import MainLayout from '@/layout/Main'
 export default {
@@ -94,12 +93,12 @@ export default {
   },
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      activeIndex: '2-1'
     }
   }
 }
 </script>
-
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h1, h2 {

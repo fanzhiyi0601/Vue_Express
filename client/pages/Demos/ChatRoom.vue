@@ -1,26 +1,26 @@
 <template>
   <main-layout :selected-id="activeIndex">
     <div>
-      <p>Home page</p>
-      <p>Home page</p>
-      <p>Home page</p>
+      chat room
     </div>
   </main-layout>
 </template>
 <script>
 import MainLayout from '@/layout/Main'
 export default {
-  name: 'Home',
+  name: 'ChatRoom',
   components: {
     MainLayout
   },
   data () {
     return {
-      activeIndex: '1'
+      msg: 'Welcome to Your Vue.js App',
+      activeIndex: '2-2'
     }
   }
 }
 </script>
+
 <style scoped>
 
 </style>
