@@ -1,5 +1,5 @@
 <template>
-  <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b" router="true">
+  <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b" router=true>
     <el-menu-item index="1" route="/home">主页</el-menu-item>
     <el-submenu index="2">
       <template slot="title">各类Demo</template>
@@ -18,9 +18,11 @@
   </el-menu>
 </template>
 <script>
+import ElCascaderMenu from 'element-ui/packages/cascader/src/menu'
 export default {
   name: 'Menu',
   components: {
+    ElCascaderMenu
   },
   props: {
     activeIndex: {
