@@ -1,5 +1,5 @@
 <template>
-  <main-layout :selected-id="activeIndex">
+  <main-layout :selected-id="activeIndex" :selected-page="activePage">
     <div class="hello">
       <h1>{{ msg }}</h1>
       <h2>Essential Links</h2>
@@ -85,7 +85,7 @@
   </main-layout>
 </template>
 <script>
-import MainLayout from '@/layout/Main'
+import MainLayout from '@/layout/MainNoSideBar'
 export default {
   name: 'HelloWorld',
   components: {
@@ -94,7 +94,8 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
-      activeIndex: '2-1'
+      activeIndex: '2-1',
+      activePage: 'Hello World Demo'
     }
   }
 }

@@ -1,22 +1,21 @@
 <template>
-  <el-container>
-    <el-header>
-      <m-menu-component v-bind:active-index="selectedId"></m-menu-component>
-    </el-header>
-      <el-container>
-        <neon-effect :options="options">
-        </neon-effect>
-        <el-aside>
-          <slot name="aside"></slot>
-        </el-aside>
-        <el-main>
-          <slot></slot>
-        </el-main>
-      </el-container>
-    <el-footer>
+  <div>
+    <div class="mu-menu" style="width: 100%">
+      <m-menu-component v-bind:active-index="selectedId" v-bind:active-page="selectedPage"></m-menu-component>
+    </div>
+    <div class="body" style="overflow:hidden">
+      <neon-effect :options="options"></neon-effect>
+      <div class="left">
+        <slot name="aside"></slot>
+      </div>
+      <div class="center">
+        <slot style="width: 100%"></slot>
+      </div>
+    </div>
+    <div class="footer">
       <p>Copyright 2018, Csteps Limited</p>
-    </el-footer>
-  </el-container>
+    </div>
+  </div>
 </template>
 <script>
 import MMenuComponent from '@/components/Menu'
@@ -24,7 +23,7 @@ export default {
   components: {
     MMenuComponent
   },
-  props: ['selectedId'],
+  props: ['selectedId', 'selectedPage'],
   data () {
     return {
       options: {
@@ -48,4 +47,6 @@ export default {
     display: inline-block;
     z-index: -1;
   }
+  .left{width:200px; margin-bottom:-3000px; padding-bottom:3000px; float:left;}
+  .center{margin:0 0 0 210px; height:600px;}
 </style>

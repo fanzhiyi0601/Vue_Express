@@ -1,5 +1,5 @@
 <template>
-  <main-layout :selected-id="activeIndex">
+  <main-layout :selected-id="activeIndex" :selected-page="activePage">
     <div>
       <p>Home page</p>
       <p>Home page</p>
@@ -8,7 +8,7 @@
   </main-layout>
 </template>
 <script>
-import MainLayout from '@/layout/Main'
+import MainLayout from '@/layout/MainNoSideBar'
 export default {
   name: 'Home',
   components: {
@@ -16,7 +16,8 @@ export default {
   },
   data () {
     return {
-      activeIndex: '1'
+      activeIndex: '1',
+      activePage: '主页'
     }
   }
 }

@@ -4,11 +4,13 @@ import Vue from 'vue'
 import App from './App'
 import router from '@/router'
 import axios from 'axios'
-import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
+import MuseUI from 'muse-ui'
+import 'muse-ui/dist/muse-ui.css'
+import theme from 'muse-ui/lib/theme'
 import {neon} from 'vue-canvas-effect'
 Vue.component(neon.name, neon)
-Vue.use(ElementUI)
+Vue.use(MuseUI)
+theme.use('dark')
 Vue.config.productionTip = false
 Vue.prototype.$ajax = axios
 
