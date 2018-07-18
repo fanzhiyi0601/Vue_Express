@@ -17,7 +17,7 @@ export default {
   data () {
     return {
       activeIndex: '1',
-      activePage: '主页'
+      activePage: '李总就是叼！'
     }
   }
 }
